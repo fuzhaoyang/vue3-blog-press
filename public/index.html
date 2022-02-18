@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.png" />
+    <title>前端小阳仔</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet/less" type="text/css" href="<%= BASE_URL %>static/theme.less" />
+    <link rel="stylesheet" type="text/css" href="<%= BASE_URL %>static/index.css" />
+    <link rel="stylesheet" type="text/css" href="<%= BASE_URL %>static/transtram-animate.css" />
+    <script type="text/javascript" src="<%= BASE_URL %>static/snow.js"></script>
+</head>
+
+<body>
+    <noscript>
+      <strong
+        >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
+        properly without JavaScript enabled. Please enable it to
+        continue.</strong
+      >
+    </noscript>
+    <div class="anim-wrap">
+        <div class="anim-text" spellcheck="false"></div>
+    </div>
+    <div id="controls">
+        <select name="selectEffect" id="selectEffect" class="control" style="visibility: hidden">
+        <option value="fade">Fade in</option>
+      </select>
+        <div></div>
+    </div>
+    <div id="app" class="one one1"></div>
+    <div class="light-loading">
+        <div class="box">
+            <h2>Loading</h2>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</body>
+<script>
+    document.onreadystatechange = function() {
+        if (document.readyState == "complete") {
+            let dom = document.getElementById("app");
+            const head = document.getElementsByTagName("head")[0];
+            const homeAnimate = sessionStorage.getItem("homeAnimate");
+            const body = document.body;
+            const screeWidth = window.screen.width;
+            if (screeWidth > 768 && !homeAnimate) {
+                body.classList.add("body-bg");
+                setTimeout(() => {
+                    dom.classList.add("transform_div");
+                    const script = document.createElement("script");
+                    script.type = "text/javascript";
+                    script.src = "<%= BASE_URL %>static/spell.js";
+                    (head || document.body).appendChild(script);
+                    script.onload = () => {
+                        setTimeout(() => {
+                            dom.classList.add("transform_div1");
+                            dom.classList.add("one2");
+                            body.removeChild(
+                                document.getElementsByClassName("anim-wrap")[0]
+                            );
+                            body.removeChild(document.getElementById("controls"));
+                            sessionStorage.setItem("homeAnimate", "homeAnimate");
+                            setTimeout(() => {
+                                body.classList.remove("body-bg");
+                                dom.classList.remove("one");
+                                dom.classList.remove("one1");
+                                dom.classList.remove("one2");
+                                dom.classList.remove("transform_div");
+                                dom.classList.remove("transform_div1");
+                            }, 1000);
+                        }, 3500);
+                    };
+                }, 50);
+            } else {
+                dom.classList.remove("one");
+                dom.classList.remove("one1");
+                body.classList.remove("body-bg");
+                body.removeChild(document.getElementsByClassName("anim-wrap")[0]);
+                body.removeChild(document.getElementById("controls"));
+            }
+            body.removeChild(document.getElementsByClassName("light-loading")[0]);
+        }
+    };
+</script>
+
+</html>

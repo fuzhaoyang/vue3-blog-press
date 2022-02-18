@@ -1,0 +1,1212 @@
+.one {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.transform_div {
+    position: absolute;
+    width: 100%;
+    height: 2000px;
+    transform: perspective(180px) rotateX(6deg);
+    border-radius: 6px;
+    transition: all 1.2s;
+}
+
+.one2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    transition: all 1s;
+}
+
+.transform_div1 {
+    position: absolute;
+    width: 100%;
+    height: 2000px;
+    transform: perspective(244px) rotateX(0deg);
+    border-radius: 6px;
+    transition: all 1s;
+}
+
+@import "https://fonts.googleapis.com/css?family=Baloo+Chettan|Gloria+Hallelujah";
+html,
+body,
+.anim-wrap {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: Helvetica Neueu, HelveticaNeueu, Helvetica, Arial, sans-serif;
+}
+
+.anim-wrap {
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 250px;
+    z-index: 89999999;
+    padding-top: 150px;
+}
+
+.anim-text {
+    font: 5em "Baloo Chettan", Helvetica Neueu, HelveticaNeueu, Helvetica, Arial;
+    white-space: nowrap;
+    min-width: 1em;
+    min-height: 1.2em;
+    border-bottom: 1px solid transparent;
+    caret-color: #f20dcc;
+}
+
+.anim-text:empty,
+.anim-text:focus {
+    outline: none;
+}
+
+.char {
+    position: relative;
+    margin: 0 .05em;
+}
+
+.char,
+.letter-inner {
+    display: inline-block;
+}
+
+.anim[data-effect=fade]>.letter {
+    animation: fadeIn 1.5s backwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+.anim[data-effect=slide]>.letter {
+    animation: slide 1s backwards;
+    transform-origin: bottom left;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(90vw) skew(-17deg) scaleX(3);
+        animation-timing-function: ease-in;
+    }
+    80% {
+        transform: translateX(0) skew(-17deg) scaleX(3);
+        animation-timing-function: ease-out;
+    }
+    88% {
+        transform: translateX(0) skew(12deg) scaleX(0.8);
+        animation-timing-function: ease-in-out;
+    }
+    95% {
+        transform: translateX(0) skew(-5deg) scaleX(1);
+        animation-timing-function: ease-in-out;
+    }
+    100% {
+        transform: translateX(0) skew(0deg) scaleX(1);
+        animation-timing-function: ease-in-out;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(70vw);
+    }
+}
+
+.anim[data-effect=roll]>.letter {
+    animation: rollIn 1.1s cubic-bezier(0, 0, 0.6, 1) backwards;
+}
+
+@keyframes rollIn {
+    from {
+        transform: translateX(90vw) rotate(1200deg);
+    }
+}
+
+.anim[data-effect=peel]>.letter {
+    animation: peelIn 2s backwards ease-in-out;
+}
+
+.anim[data-effect=peel]>.letter>.letter-inner {
+    animation: rotateY 1.3s 0.7s backwards ease-in;
+}
+
+@keyframes peelIn {
+    from {
+        transform: translate(-100vw, 0);
+    }
+}
+
+@keyframes rotateY {
+    from {
+        transform: scale(3) rotateY(180deg);
+    }
+}
+
+.anim[data-effect=swivel]>.letter:not(.space)::before {
+    background: currentColor;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .2;
+}
+
+.anim[data-effect=swivel] {
+    perspective: 100vmax;
+    perspective-origin: top;
+}
+
+.anim[data-effect=swivel]>.letter {
+    padding: 0 .1em;
+    animation: swivel 5s backwards;
+    transform-origin: top;
+}
+
+@keyframes swivel {
+    0% {
+        transform: rotateX(-90deg);
+    }
+    10% {
+        transform: rotateX(82deg);
+    }
+    20% {
+        transform: rotateX(-74deg);
+    }
+    30% {
+        transform: rotateX(66deg);
+    }
+    39% {
+        transform: rotateX(-58deg);
+    }
+    48% {
+        transform: rotateX(50deg);
+    }
+    56% {
+        transform: rotateX(-42deg);
+    }
+    63% {
+        transform: rotateX(35deg);
+    }
+    70% {
+        transform: rotateX(-28deg);
+    }
+    77% {
+        transform: rotateX(21deg);
+    }
+    83% {
+        transform: rotateX(-15deg);
+    }
+    89% {
+        transform: rotateX(9deg);
+    }
+    95% {
+        transform: rotateX(-4deg);
+    }
+    100% {
+        transform: none;
+    }
+}
+
+.anim[data-effect=hop]>.letter {
+    animation: slideIn 2s linear backwards;
+}
+
+.anim[data-effect=hop]>.letter>.letter-inner {
+    animation: hop .1s 20 alternate;
+}
+
+@keyframes hop {
+    to {
+        transform: translateY(-0.6em);
+    }
+}
+
+.anim[data-effect=wave] {
+    animation: slideIn 3s linear backwards;
+}
+
+.anim[data-effect=wave]>.letter {
+    animation: hop .15s 20 alternate;
+}
+
+.anim[data-effect=wave2] {
+    animation: slideIn 3s linear backwards;
+}
+
+.anim[data-effect=wave2]>.letter {
+    animation: inflate .5s 6 linear alternate;
+}
+
+@keyframes inflate {
+    to {
+        transform: scale(2);
+    }
+}
+
+.anim[data-effect=converge]>.letter {
+    animation: converge 2.5s forwards;
+}
+
+.anim[data-effect=converge]>.letter:nth-child(1n) {
+    transform: translate(100vw, 16vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(2n) {
+    transform: translate(-100vw, 53vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(3n) {
+    transform: translate(-64vw, -100vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(4n) {
+    transform: translate(-82vw, 100vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(5n) {
+    transform: translate(-100vw, -44vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(6n) {
+    transform: translate(28vw, 100vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(7n) {
+    transform: translate(-68vw, 100vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(8n) {
+    transform: translate(-69vw, 100vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(9n) {
+    transform: translate(-41vw, -100vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(10n) {
+    transform: translate(19vw, 100vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(11n) {
+    transform: translate(45vw, -100vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(12n) {
+    transform: translate(-34vw, 100vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(13n) {
+    transform: translate(-100vw, -70vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(14n) {
+    transform: translate(100vw, -74vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(15n) {
+    transform: translate(100vw, 78vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(16n) {
+    transform: translate(100vw, -60vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(17n) {
+    transform: translate(-48vw, 100vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(18n) {
+    transform: translate(47vw, 100vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(19n) {
+    transform: translate(-95vw, -100vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(20n) {
+    transform: translate(44vw, -100vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(21n) {
+    transform: translate(100vw, 14vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(22n) {
+    transform: translate(100vw, 62vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(23n) {
+    transform: translate(100vw, 18vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(24n) {
+    transform: translate(-100vw, -93vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(25n) {
+    transform: translate(40vw, -100vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(26n) {
+    transform: translate(40vw, -100vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(27n) {
+    transform: translate(19vw, 100vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(28n) {
+    transform: translate(-100vw, -78vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(29n) {
+    transform: translate(31vw, 100vh);
+}
+
+.anim[data-effect=converge]>.letter:nth-child(30n) {
+    transform: translate(89vw, -100vh);
+}
+
+@keyframes converge {
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+.anim[data-effect=spiral]>.letter {
+    animation: spiral 3s ease-in both;
+}
+
+@keyframes spiral {
+    from {
+        transform: rotate(720deg) translateY(-60vmax);
+    }
+}
+
+.anim[data-effect=snow]>.letter {
+    animation: snow 5s cubic-bezier(0.68, 0.21, 0.7, 1) both;
+}
+
+.anim[data-effect=snow]>.letter>.letter-inner {
+    animation: sway 1s cubic-bezier(0.46, 0.03, 0.52, 0.96) 5 alternate;
+}
+
+@keyframes snow {
+    from {
+        transform: translateY(-60vh);
+    }
+}
+
+@keyframes sway {
+    from {
+        transform: translate(2em, 0);
+    }
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.char {
+    margin: 0 .15em;
+    animation: 0.5s cubic-bezier(0.33, 0.08, 0.7, 0.32) forwards;
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 1) {
+    animation-name: meteorite;
+    transform: translate(-0.36276vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 1)>.letter-inner {
+    transform: translate(0.08505em, 0.05094em) rotate(-4.44337deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 2) {
+    animation-name: meteorite;
+    transform: translate(-20.49138vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 2)>.letter-inner {
+    transform: translate(-0.01793em, 0.14962em) rotate(-8.74755deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 3) {
+    animation-name: meteorite;
+    transform: translate(0.87248vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 3)>.letter-inner {
+    transform: translate(-0.01888em, 0.02271em) rotate(-8.29954deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 4) {
+    animation-name: meteorite;
+    transform: translate(-10.43181vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 4)>.letter-inner {
+    transform: translate(0.00546em, -0.0899em) rotate(9.55203deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 5) {
+    animation-name: meteorite;
+    transform: translate(-5.28168vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 5)>.letter-inner {
+    transform: translate(0.06745em, 0.06255em) rotate(-2.96724deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 6) {
+    animation-name: meteorite;
+    transform: translate(-21.27314vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 6)>.letter-inner {
+    transform: translate(0.04399em, 0.0612em) rotate(-7.64878deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 7) {
+    animation-name: meteorite;
+    transform: translate(14.61929vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 7)>.letter-inner {
+    transform: translate(-0.0652em, -0.1186em) rotate(-9.13605deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 8) {
+    animation-name: meteorite;
+    transform: translate(4.52104vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 8)>.letter-inner {
+    transform: translate(0.0024em, -0.06967em) rotate(1.27285deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 9) {
+    animation-name: meteorite;
+    transform: translate(-18.62678vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 9)>.letter-inner {
+    transform: translate(0.09923em, 0.0558em) rotate(1.78917deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 10) {
+    animation-name: meteorite;
+    transform: translate(-3.69557vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 10)>.letter-inner {
+    transform: translate(0.03218em, 0.11335em) rotate(0.70013deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 11) {
+    animation-name: meteorite;
+    transform: translate(-8.07971vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 11)>.letter-inner {
+    transform: translate(-0.00011em, -0.0629em) rotate(-4.9396deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 12) {
+    animation-name: meteorite;
+    transform: translate(-22.90354vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 12)>.letter-inner {
+    transform: translate(0.00016em, 0.14889em) rotate(-0.54917deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 13) {
+    animation-name: meteorite;
+    transform: translate(-21.49605vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 13)>.letter-inner {
+    transform: translate(0.0373em, -0.04177em) rotate(-9.83584deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 14) {
+    animation-name: meteorite;
+    transform: translate(-3.95026vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 14)>.letter-inner {
+    transform: translate(-0.07053em, -0.06585em) rotate(-4.21187deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 15) {
+    animation-name: meteorite;
+    transform: translate(-16.61972vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 15)>.letter-inner {
+    transform: translate(0.03399em, 0.08357em) rotate(5.41054deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 16) {
+    animation-name: meteorite;
+    transform: translate(-10.57409vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 16)>.letter-inner {
+    transform: translate(-0.03em, -0.02389em) rotate(5.67848deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 17) {
+    animation-name: meteorite;
+    transform: translate(-6.80277vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 17)>.letter-inner {
+    transform: translate(0.0123em, -0.04195em) rotate(-6.38506deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 18) {
+    animation-name: meteorite;
+    transform: translate(-18.60187vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 18)>.letter-inner {
+    transform: translate(0.0956em, 0.02989em) rotate(8.07044deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 19) {
+    animation-name: meteorite;
+    transform: translate(11.54511vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 19)>.letter-inner {
+    transform: translate(0.0305em, -0.08768em) rotate(7.61292deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 20) {
+    animation-name: meteorite;
+    transform: translate(-21.05488vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 20)>.letter-inner {
+    transform: translate(-0.09335em, -0.05281em) rotate(4.0278deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 21) {
+    animation-name: meteorite;
+    transform: translate(21.99968vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 21)>.letter-inner {
+    transform: translate(-0.05463em, -0.08772em) rotate(4.99263deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 22) {
+    animation-name: meteorite;
+    transform: translate(14.67712vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 22)>.letter-inner {
+    transform: translate(0.0368em, -0.03168em) rotate(9.42144deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 23) {
+    animation-name: meteorite;
+    transform: translate(18.24423vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 23)>.letter-inner {
+    transform: translate(0.06242em, -0.0467em) rotate(0.32212deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 24) {
+    animation-name: meteorite;
+    transform: translate(-20.11278vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 24)>.letter-inner {
+    transform: translate(-0.01524em, 0.00695em) rotate(5.94642deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 25) {
+    animation-name: meteorite;
+    transform: translate(-0.32166vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 25)>.letter-inner {
+    transform: translate(-0.08526em, 0.09999em) rotate(-0.45419deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 26) {
+    animation-name: meteorite;
+    transform: translate(-8.01373vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 26)>.letter-inner {
+    transform: translate(0.02058em, -0.10802em) rotate(0.16829deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 27) {
+    animation-name: meteorite;
+    transform: translate(-2.29585vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 27)>.letter-inner {
+    transform: translate(0.05432em, 0.05205em) rotate(1.87377deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 28) {
+    animation-name: meteorite;
+    transform: translate(-20.95665vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 28)>.letter-inner {
+    transform: translate(0.01315em, 0.0112em) rotate(3.13991deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 29) {
+    animation-name: meteorite;
+    transform: translate(-13.3309vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 29)>.letter-inner {
+    transform: translate(0.04035em, 0.01514em) rotate(8.8981deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 30) {
+    animation-name: meteorite;
+    transform: translate(9.90322vw, -60vh);
+}
+
+.anim[data-effect=meteorite]>.letter:nth-child(30n + 30)>.letter-inner {
+    transform: translate(-0.07798em, 0.04774em) rotate(-2.3314deg);
+}
+
+@keyframes meteorite {
+    to {
+        transform: none;
+    }
+}
+
+.anim[data-effect=bounce]>.letter {
+    animation: bounce 2s ease-in both;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(-60vh);
+        animation-timing-function: cubic-bezier(0.5, 0, 0.82, 0.52);
+    }
+    37% {
+        transform: none;
+        animation-timing-function: cubic-bezier(0.18, 0.48, 0.5, 1);
+    }
+    55% {
+        transform: translateY(-25vh);
+        animation-timing-function: cubic-bezier(0.5, 0, 0.82, 0.52);
+    }
+    73% {
+        transform: none;
+        animation-timing-function: cubic-bezier(0.18, 0.48, 0.5, 1);
+    }
+    81% {
+        transform: translateY(-10vh);
+        animation-timing-function: cubic-bezier(0.5, 0, 0.82, 0.52);
+    }
+    89% {
+        transform: none;
+        animation-timing-function: cubic-bezier(0.18, 0.48, 0.5, 1);
+    }
+    93% {
+        transform: translateY(-4vh);
+        animation-timing-function: cubic-bezier(0.5, 0, 0.82, 0.52);
+    }
+    97% {
+        transform: none;
+        animation-timing-function: cubic-bezier(0.18, 0.48, 0.5, 1);
+    }
+    98.5% {
+        transform: translateY(-1.1vh);
+        animation-timing-function: cubic-bezier(0.5, 0, 0.82, 0.52);
+    }
+    100% {
+        transform: none;
+        animation-timing-function: cubic-bezier(0.18, 0.48, 0.5, 1);
+    }
+}
+
+.anim[data-effect=float]>.letter {
+    animation: float 18s ease-in-out backwards;
+}
+
+.anim[data-effect=float]>.letter>.letter-inner {
+    animation: float-perpetual ease-in-out 10s 18s infinite alternate;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(60vh);
+    }
+    33% {
+        transform: translateY(-8vh);
+    }
+    51% {
+        transform: translateY(6vh);
+    }
+    66% {
+        transform: translateY(-4vh);
+    }
+    80% {
+        transform: translateY(3vh);
+    }
+    91% {
+        transform: translateY(-1.3vh);
+    }
+    100% {
+        transform: none;
+    }
+}
+
+@keyframes float-perpetual {
+    0% {
+        transform: translateY(0);
+    }
+    37% {
+        transform: translateY(-1.5vh);
+    }
+    58% {
+        transform: translateY(1.3vh);
+    }
+    81% {
+        transform: translateY(-1vh);
+    }
+    100% {
+        transform: translateY(0.8vh);
+    }
+}
+
+.anim[data-effect=bubble]>.letter {
+    position: relative;
+    animation: bubble-letter 1.3s cubic-bezier(0, 0, 0.33, 1) both;
+}
+
+.anim[data-effect=bubble]>.letter::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid;
+    border-radius: 999px;
+    animation: bubble 2.6s cubic-bezier(0, 0.41, 0.28, 1) both;
+    animation-delay: inherit;
+}
+
+.anim[data-effect=bubble]>.letter::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: currentColor;
+    border-radius: 999px;
+    animation: bubble 2.6s cubic-bezier(0, 0.41, 0.28, 1) both;
+    animation-delay: inherit;
+    opacity: 0.3;
+}
+
+@keyframes bubble-letter {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bubble {
+    from {
+        width: 0;
+        height: 0;
+    }
+    to {
+        width: 10em;
+        height: 10em;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.btn,
+.control {
+    padding: .5em 1em;
+    font-size: 1.2em;
+}
+
+.btn {
+    background: #f20dcc;
+    border: 1px solid transparent;
+    color: white;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.btn:hover,
+.btn:focus {
+    background: #f655db;
+}
+
+select {
+    border: none;
+    outline-color: #f20dcc;
+}
+
+#controls {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    border-bottom-left-radius: 5px;
+    box-shadow: -1px 2px 13px rgba(51, 0, 43, 0.4);
+    visibility: hidden;
+}
+
+#controls button {
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: fill-available;
+    border-bottom-left-radius: 5px;
+}
+
+.hide {
+    display: none !important;
+}
+
+.alert {
+    position: absolute;
+    bottom: -1.6em;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: .4em 1em 2em;
+    background: #f20dcc;
+    color: #fff0fc;
+    animation: 2s 40s peep-in both ease-in-out;
+    border-radius: 5px;
+    box-shadow: 0 -1px 6px 1px rgba(242, 13, 204, 0.3);
+}
+
+.alert.close {
+    animation: peep-out .8s linear both;
+}
+
+@keyframes peep-in {
+    0% {
+        transform: translate(-50%, 100%);
+        animation-timing-function: linear;
+    }
+    76% {
+        transform: translate(-50%, -18%);
+    }
+    90% {
+        transform: translate(-50%, -20%);
+    }
+    98% {
+        transform: translate(-50%, 8%);
+    }
+    100% {
+        transform: translate(-50%, 0);
+    }
+}
+
+@keyframes peep-out {
+    to {
+        transform: translate(-50%, 100%);
+        visibility: hidden;
+    }
+}
+
+.dismiss {
+    border: none;
+    background: #ff70e7;
+    color: white;
+    padding: .2em .5em;
+    cursor: pointer;
+    margin-left: .2em;
+}
+
+.tip {
+    position: absolute;
+    color: #f20dcc;
+    animation: show-tip .5s 15s ease-in both;
+    font-size: 1.3rem;
+    font-family: "Gloria Hallelujah", cursive;
+}
+
+@keyframes show-tip {
+    from {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+.tip .text {
+    text-shadow: -1px 2px 4px rgba(51, 0, 43, 0.2);
+}
+
+.tip strong {
+    font-weight: normal;
+}
+
+.tip svg {
+    width: 110px;
+    height: auto;
+    -webkit-filter: drop-shadow(-1px 3px 5px rgba(51, 0, 43, 0.3));
+    filter: drop-shadow(-1px 3px 5px rgba(51, 0, 43, 0.3));
+    animation: show-tip .5s 15.1s ease-in both;
+}
+
+.tip svg path {
+    fill: #f20dcc;
+}
+
+@keyframes show-tip-arrow {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+        transform: scale(0);
+    }
+    85% {
+        visibility: visible;
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.tip-effect {
+    left: -120px;
+    top: .5em;
+    animation-delay: 20s;
+}
+
+.tip-effect .text {
+    width: 110px;
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+    margin-left: -40px;
+}
+
+.tip-effect svg {
+    animation-delay: 20.1s;
+}
+
+.tip-type {
+    display: flex;
+    left: 50%;
+    top: calc(50% - 6rem);
+    transform: translateX(-50%);
+    animation-delay: 12s;
+}
+
+.tip-type svg {
+    animation-delay: 12.1s;
+    width: 40px;
+    height: 40px;
+    margin-top: .8em;
+    margin-left: 20px;
+    transform: rotate(-9deg);
+    -webkit-filter: drop-shadow(0px 1px 3px rgba(51, 0, 43, 0.3));
+    filter: drop-shadow(0px 1px 3px rgba(51, 0, 43, 0.3));
+}

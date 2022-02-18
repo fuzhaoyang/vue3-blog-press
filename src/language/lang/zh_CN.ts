@@ -1,0 +1,41 @@
+export default {
+  language:"English",
+  header: {
+    welcome: "欢迎访问响应式网站！",
+    skin:"换肤",
+    lifePerception:"漫漫人生旅途，青春是最美的一段风景。喜怒哀乐都充满着清新的味道，失败挫折也抵消不了灿烂的微笑。国际青年节，愿你尽情享受好年华，幸福快乐又潇洒。",
+    blogger:"前端·小阳仔",
+    blogTips:"关注互联网和个人搜索引擎的博客网站！",
+  },
+  navbar:{
+      "home":"首页",
+      "brokenWords":"HTML",
+      "knowledge":"CSS",
+      "life":"JavaScript",
+      "studentForum":"vue.js",
+      "download":"前端小知识",
+      "musicCircle":"面试题",
+      "message":"留言"
+  },
+  "articleRecommendation":"文章推荐",
+  "views":"浏览",
+  "comment":"评论",
+  "blog":"博客",
+  "attentionMe":"关注我",
+  "sinaWeibo":"新浪微博",
+  "tencentWeibo":"腾讯微博",
+  "rss":"我的RSS",
+  "email":"我的邮箱",
+  "clickRanking":"点击排行",
+  "latestArticle":"最新文章",
+  "recommended":"站长推荐",
+  "graphic":"图文推荐",
+  "tagCloud":"标签云",
+  "keepRecord":"朝阳个人技术博客 Design by 朝阳 备案号：陕ICP备陕ICP备19013504号",
+  "myMessage":"我的留言",
+  "speakUp":"畅言一下",
+  "comments":"条评论",
+  "reply":"回复",
+  "more":"更多内容>>"
+
+};

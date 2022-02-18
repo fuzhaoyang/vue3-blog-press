@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.white {
+    color: #ffffff;
+}
+
+.f-12 {
+    font-size: 12px;
+}
+
+.f-16 {
+    font-size: 16px;
+}
+
+.f-22 {
+    font-size: 22px !important;
+}
+
+.m-r-10 {
+    margin-right: 10px;
+}
+
+.m-t-5 {
+    margin-top: 5px;
+}
+
+.m-t-10 {
+    margin-top: 10px;
+}
+
+.p-t-7 {
+    padding-top: 7px;
+}
+
+.m-t-20 {
+    margin-top: 20px;
+}
+
+.m-t-30 {
+    margin-top: 30px;
+}
+
+.m-b-20 {
+    margin-bottom: 20px;
+}
+
+.m-r-2 {
+    margin-right: 2px;
+}
+
+.f-bold {
+    font-weight: bold;
+}
+
+.cur-pointer {
+    cursor: pointer;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.display-block {
+    display: block !important;
+}
+
+.display-none {
+    display: none !important;
+}
+
+.position-r {
+    position: relative;
+}
+
+.position-a {
+    position: absolute;
+}
+
+.weizhi {
+    margin-right: 10px;
+    color: #ef6926;
+    font-size: 24px !important;
+}
+
+.text-overflow {
+    overflow: hidden;
+    /*超出部分隐藏*/
+    white-space: nowrap;
+    /*不换行*/
+    text-overflow: ellipsis;
+    /*超出部分文字以...显示*/
+}
+
+.text-center {
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    .hidden-xs {
+        display: none;
+    }
+}
+
+
+/* 骨架屏动画样式 */
+
+.chiaroscuro {
+    width: 100%;
+    background: #bebebe33;
+    animation-duration: 1.5s;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.4;
+    }
+}
+
+@keyframes flush {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 0;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+pre {
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden !important;
+    background-color: #fafafa;
+}
+
+code {
+    background-color: #fafafa !important;
+}
+
+code.hljs {
+    padding: 7px 0 6px 40px !important;
+}
+
+.pre-numbering {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 30px;
+    border-right: 1px solid #c5c5c5;
+    background-color: #fafafa;
+    text-align: center;
+    padding: 0.5em 0;
+}
+
+.pre-numbering li {
+    list-style: none;
+    color: #383a42;
+    font-size: 1em;
+}
+
+#pop_ad {
+    display: none;
+}
+
+#feedAv {
+    display: none;
+}
+
+#SOHUCS #SOHU_MAIN .module-cmt-footer .section-service-w .service-wrap-w {
+    display: none !important;
+}

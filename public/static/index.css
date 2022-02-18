@@ -1,0 +1,139 @@
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+    /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+    
+     ::-webkit-scrollbar {
+        width: 7px;
+        height: 7px;
+        background-color: #f5f5f5;
+    }
+    /*定义滚动条轨道 内阴影+圆角*/
+    
+     ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        background-color: #f5f5f5;
+    }
+    /*定义滑块 内阴影+圆角*/
+    
+     ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+        background-color: #c8c8c8;
+    }
+    
+    @-webkit-keyframes loading {
+        0% {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes loading {
+        0% {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    .light-loading {
+        background: #fff;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 99999;
+    }
+    
+    .light-loading .box h2 {
+        color: #777;
+        margin: 0;
+        font: 14px verdana;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-align: center;
+    }
+    
+    .light-loading .box span {
+        display: inline-block;
+        vertical-align: middle;
+        width: 10px;
+        height: 10px;
+        margin: 3px;
+        background: #007db6;
+        border-radius: 50%;
+        -webkit-animation: loading 1s infinite alternate;
+        animation: loading 1s infinite alternate;
+    }
+    
+    .light-loading .box span:nth-of-type(2) {
+        background: #008fb2;
+        -webkit-animation-delay: 0.2s;
+        animation-delay: 0.2s;
+    }
+    
+    .light-loading .box span:nth-of-type(3) {
+        background: #009b9e;
+        -webkit-animation-delay: 0.4s;
+        animation-delay: 0.4s;
+    }
+    
+    .light-loading .box span:nth-of-type(4) {
+        background: #00a77d;
+        -webkit-animation-delay: 0.6s;
+        animation-delay: 0.6s;
+    }
+    
+    .light-loading .box span:nth-of-type(5) {
+        background: #00b247;
+        -webkit-animation-delay: 0.8s;
+        animation-delay: 0.8s;
+    }
+    
+    .light-loading .box span:nth-of-type(6) {
+        background: #5ab027;
+        -webkit-animation-delay: 1s;
+        animation-delay: 1s;
+    }
+    
+    .light-loading .box span:nth-of-type(7) {
+        background: #a0b61e;
+        -webkit-animation-delay: 1.2s;
+        animation-delay: 1.2s;
+    }
+    
+    .f-color {
+        color: #fff;
+    }
+    
+    .body-bg {
+        background: url(../static/wutai.jpg);
+    }
+    
+    .animate-container {
+        width: 100%;
+        background: #d0ecf8;
+        background-image: url(../static/bg1.png);
+    }
+    
+    .acticle-container {
+        background: #E5F3F7;
+    }
+    
+    .navbar-bg-opacity {
+        background: rgba(137, 187, 212);
+    }

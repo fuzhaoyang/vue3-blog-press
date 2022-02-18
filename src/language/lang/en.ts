@@ -1,0 +1,41 @@
+export default {
+    language:"中文",
+    header: {
+      welcome: "Welcome to the responsive website！",
+      skin:"Skin",
+      lifePerception:"In the long journey of life, youth is the most beautiful scenery. Joys and sorrows are full of fresh flavor. May you enjoy your good years, happy and natural.",
+      blogger:"Front End · Yang",
+      blogTips:"Focus on the latest front-end technology!",
+    },
+    navbar:{
+      "home":"首页",
+      "brokenWords":"HTML",
+      "knowledge":"CSS",
+      "life":"JavaScript",
+      "studentForum":"vue.js",
+      "download":"前端小知识",
+      "musicCircle":"面试题",
+      "message":"留言"
+    },
+    "articleRecommendation":"Article recommendation",
+    "views":"Views",
+    "comment":"Comment",
+    "blog":"Blog",
+    "attentionMe":"Pay attention to me",
+    "sinaWeibo":"Sina weibo",
+    "tencentWeibo":"Tencent weibo",
+    "rss":"My rss",
+    "email":"My email",
+    "clickRanking":"Ranking",
+    "latestArticle":"Latest",
+    "recommended":"Recommend",
+    "graphic":"Graphic recommendation",
+    "tagCloud":"Tag cloud",
+    "keepRecord":"Chaoyang personal technology blog design by Chaoyang filing No.: Shaan ICP Bei Shaan ICP Bei 19013504",
+    "myMessage":"My message",
+    "speakUp":"Speak up",
+    "comments":"Comments",
+    "reply":"Replay",
+    "more":"More>>"
+  };
+  
